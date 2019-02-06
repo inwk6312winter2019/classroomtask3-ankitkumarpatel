@@ -57,6 +57,10 @@ class Deck:
     def sort(self):       
         self.cards.sort()
 
+    def move_cards(self, hand, num):
+        for i in range(num):
+            hand.add_card(self.pop_card())
+
 class Hand(Deck):
 
     """ This represents hand of Player """
@@ -65,9 +69,39 @@ class Hand(Deck):
         self.cards = []
         self.label = label
 
+def main():
+    deck = Deck()
+    deck.shuffle()
+    hand = Hand()
+    deck.move_cards(hand,8)
+    hand.sort()
+    print(hand)
 
-ace_of_spade=Card(1,3)
-print(ace_of_spade)
+
+if __name__ == '__main__':
+    main()
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
