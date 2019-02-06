@@ -42,6 +42,28 @@ class Deck:
             res.append(str(card))
         return '\n'.join(res)
 
+    def add_card(self, card):
+        self.cards.append(card)
+
+    def remove_card(self, card):
+        self.cards.remove(card)
+
+    def pop_card(self, i=-1):        
+        return self.cards.pop(i)
+
+    def shuffle(self):        
+        random.shuffle(self.cards)
+
+    def sort(self):       
+        self.cards.sort()
+
+class Hand(Deck):
+
+    """ This represents hand of Player """
+    
+    def __init__(self, label=''):
+        self.cards = []
+        self.label = label
 
 
 ace_of_spade=Card(1,3)
